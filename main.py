@@ -170,6 +170,10 @@ def main():
             elif event.type == pygame.KEYUP:  # Обрабатываем различные нажатые клавиши.
                 mp.update(event)
             elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_PAGEUP and mp.zoom < 19 and mp.zoom > 0:
+                    mp.zoom += 1
+                elif event.key == pygame.K_PAGEDOWN and mp.zoom < 19 and mp.zoom > 0:
+                    mp.zoom -= 1
                 check_keys(event, mp)
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if LINE_X + LINE_WIDTH <= event.pos[0] <= LINE_X + LINE_WIDTH + BTN_WIDTH \
