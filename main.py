@@ -93,6 +93,13 @@ def main():
         event = pygame.event.wait()
         if event.type == pygame.QUIT:  # Выход из программы
             break
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_F5:
+                mp.type = 'sat,skl'
+            elif event.key == pygame.K_F6:
+                mp.type = 'sat'
+            elif event.key == pygame.K_F7:
+                mp.type = 'map'
         elif event.type == pygame.KEYUP:  # Обрабатываем различные нажатые клавиши.
             mp.update(event)
         # другие eventы
