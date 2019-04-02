@@ -93,6 +93,11 @@ def main():
         event = pygame.event.wait()
         if event.type == pygame.QUIT:  # Выход из программы
             break
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_PAGEUP:
+                mp.zoom += 1
+            elif event.key == pygame.K_PAGEDOWN:
+                mp.zoom -= 1
         elif event.type == pygame.KEYUP:  # Обрабатываем различные нажатые клавиши.
             mp.update(event)
         # другие eventы
