@@ -170,6 +170,12 @@ def main():
             elif event.type == pygame.KEYUP:  # Обрабатываем различные нажатые клавиши.
                 mp.update(event)
             elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_F5:
+                    mp.type = 'sat,skl'
+                elif event.key == pygame.K_F6:
+                    mp.type = 'sat'
+                elif event.key == pygame.K_F7:
+                    mp.type = 'map'
                 if event.key == pygame.K_PAGEUP and mp.zoom < 19 and mp.zoom > 0:
                     mp.zoom += 1
                 elif event.key == pygame.K_PAGEDOWN and mp.zoom < 19 and mp.zoom > 0:
